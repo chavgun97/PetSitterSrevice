@@ -1,5 +1,8 @@
-﻿using System;
+﻿using PetSitterSrevice.ORM;
+using PetSitterSrevice.ORM.Model;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -12,9 +15,22 @@ namespace PetSitterSrevice
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        public string GetData(int value)
+        public string GetData()
         {
-            return string.Format("You entered: {0}", value);
+            string r ="";
+            using (var context = new PetSitterDbContext())
+            {
+                var user = new User() { TestAmountInCoins = 555, Pets = new List<Pet>() { new Pet() { Kind = KindOfPet.FROG } } };
+                var sitter = new Sitter();
+                context.Users.Add(user) ;
+                context.Sitters.Add(sitter);
+                context.SaveChanges();
+                context.Orders.Add(new Order() { User = user, Sitter = sitter, PetId = context.Users.First(x => x.Id == 25).Pets.First().Id }); 
+                context.SaveChanges();
+                r = context.Users.ToArray<User>().Length.ToString();
+
+            }
+                return r;
         }
 
         public CompositeType GetDataUsingDataContract(CompositeType composite)

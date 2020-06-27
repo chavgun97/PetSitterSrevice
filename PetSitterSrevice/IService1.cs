@@ -14,7 +14,7 @@ namespace PetSitterSrevice
     {
 
         [OperationContract]
-        string GetData(int value);
+        string GetData();
 
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
