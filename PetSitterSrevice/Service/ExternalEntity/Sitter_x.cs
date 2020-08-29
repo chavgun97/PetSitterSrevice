@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity.Spatial;
-using System.Drawing;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Web;
 
 namespace PetSitterSrevice.Service.ExternalEntity
 {
@@ -41,8 +37,8 @@ namespace PetSitterSrevice.Service.ExternalEntity
         public bool OnlineStatus { get; set; }
         [DataMember]
         public string Level { get; set; }//Заменить на енам
-        [DataMember]
-         public ICollection<Order_x> Orders { get; set; }
+        [IgnoreDataMember]
+        public ICollection<Order_x> Orders { get; set; }
 
         public Sitter_x()
         {

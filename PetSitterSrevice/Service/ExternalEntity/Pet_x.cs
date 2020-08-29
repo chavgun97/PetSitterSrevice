@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Web;
+﻿using System.Runtime.Serialization;
 
 namespace PetSitterSrevice.Service.ExternalEntity
 {
@@ -16,7 +12,7 @@ namespace PetSitterSrevice.Service.ExternalEntity
         [DataMember]
         public bool Sex { get; set; }
         [DataMember]
-        public DateTime DateOfBirthday { get; set; }
+        public string DateOfBirthday { get; set; } //если понадобиться логика нужно переопределять JSON converter анотацию
         [DataMember]
         public string UrlPhotoLable { get; set; }
         [DataMember]
@@ -25,8 +21,9 @@ namespace PetSitterSrevice.Service.ExternalEntity
         public string Breed { get; set; } //заменить на медель
         [DataMember]
         public string Recommendation { get; set; }
+
         [DataMember]
-        virtual public User_x User { get; set; }
+        public int UserId { get; set; }
 
     }
 }

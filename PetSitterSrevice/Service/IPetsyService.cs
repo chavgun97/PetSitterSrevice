@@ -1,11 +1,8 @@
-﻿using System;
+﻿using PetSitterSrevice.Service.ExternalEntity;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
-using System.Text;
-using PetSitterSrevice.Service.ExternalEntity;
 
 namespace PetSitterSrevice.Service
 {
@@ -25,7 +22,7 @@ namespace PetSitterSrevice.Service
     [ServiceContract]
     public interface IPetsyService
     {
-        [WebInvoke(Method = "POST", UriTemplate = "/GetUserByToken",
+        [WebInvoke(Method = "GET", UriTemplate = "/GetUserByToken",
             RequestFormat = WebMessageFormat.Json,
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Wrapped)]
@@ -33,15 +30,15 @@ namespace PetSitterSrevice.Service
         User_x GetUserByToken();
 
 
-        /*[WebInvoke(Method = "POST", UriTemplate = "/GetPetsByUserId",
+        [WebInvoke(Method = "POST", UriTemplate = "/GetPetsByUserId",
             RequestFormat = WebMessageFormat.Json,
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Wrapped)]
         [OperationContract]
-        IEnumerable<Pet_x> GetPetsByUserId(int UserId);*/
+        IEnumerable<Pet_x> GetPetsByUserId(int UserId);
 
 
-        [WebInvoke(Method = "POST", UriTemplate = "/GetAllSitters",
+        [WebInvoke(Method = "GET", UriTemplate = "/GetAllSitters",
             RequestFormat = WebMessageFormat.Json,
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Wrapped)]
@@ -49,20 +46,20 @@ namespace PetSitterSrevice.Service
         IEnumerable<Sitter_x> GetAllSitters();
 
 
-       /* [WebInvoke(Method = "POST", UriTemplate = "/GetOrdersByUserId",
-            RequestFormat = WebMessageFormat.Json,
-            ResponseFormat = WebMessageFormat.Json,
-            BodyStyle = WebMessageBodyStyle.Wrapped)]
+        [WebInvoke(Method = "POST", UriTemplate = "/GetOrdersByUserId",
+             RequestFormat = WebMessageFormat.Json,
+             ResponseFormat = WebMessageFormat.Json,
+             BodyStyle = WebMessageBodyStyle.Wrapped)]
         [OperationContract]
         IEnumerable<Order_x> GetOrdersByUserId(int UserId);
 
 
-        [WebInvoke(Method = "POST", UriTemplate = "/5",
+        [WebInvoke(Method = "POST", UriTemplate = "/GetUrdersBySitterId",
             RequestFormat = WebMessageFormat.Json,
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Wrapped)]
         [OperationContract]
-        IEnumerable<Order_x> GetOrdersBySitterId(int SitterId);*/
+        IEnumerable<Order_x> GetOrdersBySitterId(int SitterId);
 
 
         [WebInvoke(Method = "POST", UriTemplate = "/GetSittersByLocation",
@@ -148,17 +145,17 @@ namespace PetSitterSrevice.Service
            ResponseFormat = WebMessageFormat.Json,
            BodyStyle = WebMessageBodyStyle.Wrapped)]
         [OperationContract]
-        string [] GetAllBreeds ();
+        string[] GetAllBreeds();
 
 
-        [WebInvoke (Method = "GET", UriTemplate = "/check",
+        [WebInvoke(Method = "GET", UriTemplate = "/check",
             RequestFormat = WebMessageFormat.Json,
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Wrapped)]
         [OperationContract]
         string IsWorking();
 
-        
+
 
     }
 }

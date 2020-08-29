@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Web;
+﻿using System.Runtime.Serialization;
 
 namespace PetSitterSrevice.ORM.Model
 {
     [DataContract]
     public enum TypeSitter
     {
-        [EnumMember]
+        None,
         PetSitting,
-        [EnumMember]
         Сritter,
-        [EnumMember]
         Walking
     }
 }

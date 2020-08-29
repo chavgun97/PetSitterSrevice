@@ -1,23 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity.Spatial;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Web;
 
 namespace PetSitterSrevice.ORM.Model
 {
     public class Sitter
     {
         public int Id { get; set; }
-        public string FireBaseAuthKey { get; set; }
-        public TypeSitter Type { get; set; }  //заменить на списко медлей
-        public SizePetType TypeSizePetSitter { get; set; } //заменить на списко медлей
+        public string UID { get; set; }
+        public string UrlPhotoLable { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public string Location { get; set; }
+        public int Reiting { get; set; } // max 50
         public KindOfPet KindofPet { get; set; } //заменить на списко медлей
-        public DbGeography Location { get; set; }
-        public int PriceInCoins { get; set; }
+        public int PricePerHourInCoins { get; set; }
+        public int PricePerDayInCoins { get; set; }
         public int TestAmountInCoins { get; set; }
+        public String Description { get; set; }
+        public bool OnlineStatus { get; set; }
+        public string Level { get; set; }//Заменить на енам
+
+        virtual public ICollection<TypeSitterModel> Types { get; set; }
+
         virtual public ICollection<Order> Orders { get; set; }
 
 

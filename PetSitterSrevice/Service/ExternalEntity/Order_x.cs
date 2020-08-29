@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Web;
+﻿using System.Runtime.Serialization;
 
 namespace PetSitterSrevice.Service.ExternalEntity
 {
@@ -19,15 +14,13 @@ namespace PetSitterSrevice.Service.ExternalEntity
         [DataMember]
         public TypeSitter_x Type { get; set; }
         [DataMember]
-        public DateTime? From { get; set; }
+        public string DateFrom { get; set; }
         [DataMember]
-        public DateTime? To { get; set; }
+        public string DateTo { get; set; }
         [DataMember]
         public bool IsActive { get; set; }
         [DataMember]
-         public User_x User { get; set; }
-        [DataMember]
-         public Sitter_x Sitter { get; set; }
+        public Sitter_x Sitter { get; set; }
         [DataMember]
         public Pet_x Pet { get; set; }
 
