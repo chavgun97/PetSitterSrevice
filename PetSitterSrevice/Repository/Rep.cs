@@ -29,19 +29,19 @@ namespace PetSitterSrevice.Repository
                 var breads = context.Breads;
                 if (breads.Count() == 0)
                 {
-                    breads.Add(new Bread() { Name = "Немецкий шпиц" });
-                    breads.Add(new Bread() { Name = "Йоркширский терьер" });
-                    breads.Add(new Bread() { Name = "Чихуахуа" });
-                    breads.Add(new Bread() { Name = "Немецкая овчарка" });
-                    breads.Add(new Bread() { Name = "Лабрадор-ретривер" });
-                    breads.Add(new Bread() { Name = "Хаски" });
-                    breads.Add(new Bread() { Name = "Джек-рассел-терьер" });
-                    breads.Add(new Bread() { Name = "Среднеазиатская овчарка" });
-                    breads.Add(new Bread() { Name = "Кавказская овчарка" });
-                    breads.Add(new Bread() { Name = "Вельш-корги пемброк" });
-                    breads.Add(new Bread() { Name = "Золотистый ретривер" });
-                    breads.Add(new Bread() { Name = "Французский бульдог" });
-                    breads.Add(new Bread() { Name = "Кокер-спаниель" });
+                    breads.Add(new Bread() { Name = "Labrador Retriever" });
+                    breads.Add(new Bread() { Name = "German Shepherd Dog" });
+                    breads.Add(new Bread() { Name = "French Bulldog" });
+                    breads.Add(new Bread() { Name = "Golden Retriever" });
+                    breads.Add(new Bread() { Name = "Bulldogs" });
+                    breads.Add(new Bread() { Name = "Poodles" });
+                    breads.Add(new Bread() { Name = "Beagles" });
+                    breads.Add(new Bread() { Name = "Rottweilers" });
+                    breads.Add(new Bread() { Name = "Pointers (German Shorthaired)" });
+                    breads.Add(new Bread() { Name = "Pembroke Welsh Corgis" });
+                    breads.Add(new Bread() { Name = "Dachshunds" });
+                    breads.Add(new Bread() { Name = "Yorkshire Terriers" });
+                    breads.Add(new Bread() { Name = "Australian Shepherds" });
 
                 }
                 var sitters = context.Sitters;
